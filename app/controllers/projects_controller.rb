@@ -4,8 +4,8 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    post = Project.new(project_params)
-    post.save
+    project = Project.new(project_params)
+    project.save
 
     redirect_to root_path
   end
@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
     @projects = Project.all
     end
   end
-
+  private
   def project_params
     params.require(:project).permit(:name, :description, :state, :starts_on, :ends_on)    
   end

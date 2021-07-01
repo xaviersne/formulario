@@ -1,0 +1,22 @@
+<h1>Nuevo proyecto<h1>
+
+
+<%= form_with(model: @project, local: true) do |form| %>
+
+<%= form.label :name %>
+<%= form.text_field :name %>
+<br/>
+<%= form.label :description %>
+<%= form.text_area :description%>
+<br/>
+<%= form.label :starts_on %>
+<%= form.date_field :starts_on%>
+<br/>
+<%= form.label :ends_on %>
+<%= form.date_field :ends_on%>
+<br/>
+<%= form.select :state, ["Proposal", "In Progress", "Finished"]%>
+<%= form.submit %>
+<!--state-->
+
+<% end %>
